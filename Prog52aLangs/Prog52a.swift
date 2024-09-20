@@ -1,6 +1,10 @@
 
-print("Enter length: "); int length = int(readLine())
-print("Enter width: "); int width = int(readLine())
+print("Enter length: ")
+var length = Int(readLine()!)! ?? 0
+print("Enter width: ")
+var width = Int(readLine()!)! ?? 0
 
-int area = length * width
-int perim = 2*lengh + 2*width
+var area = length * width
+var perim = 2*length + 2*width
+print("Area: ", area)
+print("Perimeter: ", perim)
