@@ -247,12 +247,15 @@ ___
 Conditional operators in C++ are similar to mathematical notation. To type them out in the C++ syntax, you do this:
 ```cpp
 #include <iostream>
+using namespace std;
 
 int a = 40;
 int b = 59;
 
 if (a >= b) {
   cout << a;
+} else if (a <= b) {
+  cout << b;
 }
 ```
 
@@ -268,7 +271,7 @@ ___
 
 # 9. Logic Operators
 
-`and`
+
 
 
 
