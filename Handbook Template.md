@@ -365,8 +365,13 @@ ___
 
 
 ## 15.1 Arrays/Lists
+```cpp
+// 
+type arrayName [ arraySize ];
+int balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
 
-???
+// Assigning different values to 
+```
 
 
 
