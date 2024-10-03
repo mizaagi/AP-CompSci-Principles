@@ -16,7 +16,7 @@ int main() {
     string s;
 
     // Get string to analyze
-    cout << "Enter a string: ";
+    cout << "Enter a sentence with multiple words: ";
     getline(cin, s);
     cout << "length: " << s.length() << endl;
 
