@@ -11,5 +11,41 @@ are greater or lesser and figure out how to convert it to a normal integer.
 */
 
 int main() {
-    // This what I'm going to do in class tomorrow
+    vector<int> nums;
+    string romString;
+    int total = 0;
+    int run = 0;
+    cout << "Enter roman numerals: ";
+    cin >> romString;
+
+    for (int lcv = 0; lcv < romString.length(); lcv++) {
+        if (romString.substr(lcv, 1) == "I") {
+            nums.push_back(1);
+        } else if (romString.substr(lcv, 1) == "V") {
+            nums.push_back(5);
+        } else if (romString.substr(lcv, 1) == "X") {
+            nums.push_back(10);
+        } else if (romString.substr(lcv, 1) == "L") {
+            nums.push_back(50);
+        } else if (romString.substr(lcv, 1) == "C") {
+            nums.push_back(100);
+        } else if (romString.substr(lcv, 1) == "D") {
+            nums.push_back(500);
+        } else if (romString.substr(lcv, 1) == "M") {
+            nums.push_back(1000);
+        }
+    }
+
+    while (run < nums.size()) {
+        if (nums[run] < nums[run+1]) {
+            total += nums[run+1] - nums[run];
+            run++;
+            
+        } else {
+            total += nums[run];
+        }
+        run++;
+    }
+
+    cout << "Number: " << total;
 }
