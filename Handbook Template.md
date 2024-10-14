@@ -161,11 +161,10 @@ The easiest way to cast is by using parentheses and then the item that you want 
 #include <iostream>
 using namespace std;
 
-double num = 1.578;
+double fui = 1.578;
 cout << (int) fui;
 cout << int (fui);
 ```
-Alternatively, you can use implicit type casting
 
 ## 4.2 Math Functions
 C++ has a library that provides the user with a wealth of different options for math functions: `<cmath>`. 
@@ -184,11 +183,11 @@ To multiply, divide, add to, subtract from, or modulo a variable, you can use th
 ```cpp
 int num = 5;
 
-num *= 5; // 5 * 5 = 25
-num /= 5; // 25 / 5 = 5
-num -= 5; // 5 - 5 = 0
-num += 5; // 0 + 5 = 5
-num %= 5; // 5 % 5 = 0
+num *= 5;
+num /= 5;
+num -= 5;
+num += 5;
+num %= 5;
 ```
 
 
@@ -271,16 +270,10 @@ ___
 
 
 # 9. Logic Operators
-Logical operators in C++ include `&&` for and, `||` for or, and `!` for not.
 
 ```cpp
-if (x && y) {
-  doThing();
-} else if (!x || y) {
-  doOtherThing();
-} else {
-  goToSleep();
-}
+#include <iostream>
+
 ```
 
 
@@ -294,23 +287,8 @@ ___
 
 
 # 10. Advanced Decision Structures
-As an alternative to if-else structures, you can use the `switch()` statement to check for cases in C++, as below:
-```cpp
-int value = 4;
 
-switch(value) {
-  case 1 :
-    cout << "Your AP score is 1 out of 5 - Yikes!";
-  case 2 :
-    cout << "Your AP score is 2 out of 5 - so close...";
-  case 3 :
-    cout << "Your AP score is 3 out of 5- good job passing, I guess.";
-  case 4 :
-    cout << "Your AP score is 4 out of 5- almost perfect!";
-  case 5 :
-    cout << "YOU DID IT! Your AP score is 5 out of 5!";
-}
-```
+???
 
 
 
@@ -365,8 +343,9 @@ ___
 
 
 # 14. Functions/Methods
+```cpp
 
-???
+```
 
 
 
@@ -388,11 +367,15 @@ ___
 
 ## 15.1 Arrays/Lists
 ```cpp
+#include <vector>
+#include <string>
 // 
+vector<string> words = { };
 type arrayName [ arraySize ];
 int balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+// Assigning different values to elements of arrays
+// works the same as it does in Python:
 
-// Assigning different values to 
 ```
 
 

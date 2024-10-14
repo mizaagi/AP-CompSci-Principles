@@ -14,7 +14,7 @@ int main() {
     vector<int> nums;
     string romString;
     int total = 0;
-    int run = 0;
+    // int run = 0;
     cout << "Enter roman numerals: ";
     cin >> romString;
 
@@ -35,17 +35,19 @@ int main() {
             nums.push_back(1000);
         }
     }
-
-    while (run < nums.size()) {
+    // Marlon's Basic Student Code
+    for (int run = 0; run < nums.size(); run++) {
         if (nums[run] < nums[run+1]) {
             total += nums[run+1] - nums[run];
             run++;
-            
         } else {
             total += nums[run];
         }
-        run++;
     }
+
+    // "The Dan Way"
+    // for (int run = 0; run < nums.size(); run++)
+    //     total += (nums[run] < nums[run+1]) ? nums[run+1] - nums[run++] : nums[run];
 
     cout << "Number: " << total;
 }
