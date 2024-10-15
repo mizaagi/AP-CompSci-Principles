@@ -1,6 +1,9 @@
 #include <iostream>
 #include <random>
+#include "mylibrary.hpp"
 using namespace std;
+
+
 
 int main() {
     // SETUP
@@ -54,5 +57,21 @@ int main() {
     cout << endl;
 
     // STEP 6: Switch the largest with the smallest number. Print the list.
+    int largLoc = 0;
+    int smalLoc = 0;
+    largLoc =  indexOf(bigArray, largest);
+    smalLoc = indexOf(bigArray, smallest);
+    bigArray[largLoc] = smallest;
+    bigArray[smalLoc] = largest;
+    cout << "Reprinted list: " << endl;
+    for (int v : bigArray) {
+        cout << v << " ";
+    }
+
+    cout << endl;
+
+    // STEP 7: Create a new random from 1 to 10 and insert it in the middle slot. Print the numbers.
+    uniform_int_distribution<int> dist(1,10);
+    
     
 }
