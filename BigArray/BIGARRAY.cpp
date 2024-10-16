@@ -58,32 +58,95 @@ int main() {
 
     // STEP 6: Switch the largest with the smallest number. Print the list.
     cout << "Step 6" << endl;
-    int largLoc = 0;
-    int smalLoc = 0;
-    largLoc =  indexOf(bigArray, largest);
-    smalLoc = indexOf(bigArray, smallest);
+    int largLoc;
+    int smalLoc;
+    largLoc =  indexOf(bigArray, largest, sizeof(bigArray)/sizeof(bigArray[0]));
+    cout << "largLoc = " << largLoc << endl;
+    smalLoc = indexOf(bigArray, smallest, sizeof(bigArray)/sizeof(bigArray[0]));
+    cout << "smalLoc = " << smalLoc << endl;
     bigArray[largLoc] = smallest;
     bigArray[smalLoc] = largest;
-    // Something about this doesnt work... large number gets deleted
     cout << "Reprinted list: " << endl;
     for (int v : bigArray) {
         cout << v << " ";
     }
 
-    cout << endl;
+    cout << endl << endl;
 
     // STEP 7: Create a new random from 1 to 10 and insert it in the middle slot. Print the numbers.
+    cout << "Step 7" << endl;
     uniform_int_distribution<int> newdist(1,10);
-
-    cout << endl;
+    int newArray[20];
+    for (int lcv = 0; lcv < 10; lcv++) {
+        newArray[lcv] = bigArray[lcv];
+    }
+    newArray[10] = newdist(rd);
+    for (int lcv = 11; lcv < 21; lcv++) {
+        newArray[lcv] = bigArray[lcv-1];
+    }
+    for (int v : newArray) {
+        cout << v << " ";
+    }
+    cout << endl << endl;
 
     // STEP 8: 
     cout << "Step 8" << endl;
-    for (int lcv = 0; lcv < arrlen(bigArray); lcv++) {
-        bigArray[lcv] = bigArray[lcv] + 10;
+    for (int lcv = 0; lcv < sizeof(newArray)/sizeof(newArray[0]); lcv++) {
+        newArray[lcv] = newArray[lcv] + 10;
     }
-    for (int v : bigArray) {
+    for (int v : newArray) {
         cout << v << " ";
+    }
+    
+    cout << endl << endl;
+
+    // STEP 9:
+    cout << "Step 9" << endl;
+    int old3Val = newArray[2];
+    newArray[2] = 5;
+    cout << old3Val;
+
+    cout << endl << endl;
+
+    // STEP 10:
+    cout << "Step 10" << endl;
+    for (int v : newArray) {
+        if (v >= 50 && v < 60) {
+            cout << v << " ";
+        }
+    }
+
+    cout << endl << endl;
+
+    // STEP 11:
+    cout << "Step 11" << endl;
+    for (int v : newArray) {
+        if (v % 4 == 0) {
+            cout << v << " ";
+        }
+    }
+
+    cout << endl << endl;
+
+    // STEP 12:
+    cout << "Step 12" << endl;
+    for (int v : newArray) {
+        if (v == 60) {
+            cout << "Yes, there is at least one 60 in the list.";
+            break;
+        }
+        cout << "No, there is not a 60 inside the list.";
+    }
+
+    cout << endl << endl;
+
+    // STEP 13:
+    cout << "Step 13" << endl;
+    int equals = 0;
+    for (int lcv = 0; lcv < 20; lcv++) {
+        if (newArray[lcv] == newArray[19-lcv]) {
+            equals++;
+        }
     }
     
 }
