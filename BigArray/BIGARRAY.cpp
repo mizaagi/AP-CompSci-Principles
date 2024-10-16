@@ -193,6 +193,35 @@ int main() {
     cout << endl << endl;
 
     // STEP 17:
-    
+    cout << "Step 17" << endl;
+    int sadArray[20];   
+    for (int lcv = 19; lcv > 0; lcv--) {
+        sadArray[lcv] = anoArray[lcv-1];
+    }
+    sadArray[0] = anoArray[19];
+    cout << "Old Array: ";
+    for (int v : anoArray) {
+        cout << v << " ";
+    }
+    cout << endl << "New Array: ";
+    for (int v : sadArray) {
+        cout << v << " ";
+    }
+
+    cout << endl << endl;
+
+    // STEP 18:
+    cout << "Step 18" << endl;
+    int digitsum = 0;
+    int currentnum;
+    for (int v : sadArray) {
+        currentnum = v;
+        while (currentnum > 0) {
+            int digit = currentnum%10;
+            currentnum /= 10;
+            digitsum += digit;
+        }
+    }
+    cout << "The sum of all digits in the list is " << digitsum << endl;
      
 }
