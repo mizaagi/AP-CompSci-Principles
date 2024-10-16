@@ -130,13 +130,15 @@ int main() {
 
     // STEP 12:
     cout << "Step 12" << endl;
+    bool sixtyIn = false;
     for (int v : newArray) {
         if (v == 60) {
-            cout << "Yes, there is at least one 60 in the list.";
+            sixtyIn = true;
             break;
         }
-        cout << "No, there is not a 60 inside the list.";
     }
+    if (sixtyIn) cout << "Yes, there is at least one 60 in the list.";
+    else cout << "There are no 60s in the list.";
 
     cout << endl << endl;
 
@@ -148,5 +150,49 @@ int main() {
             equals++;
         }
     }
+    if (equals == 20) cout << "Numbers are the same when put in reversed order.";
+    else cout << "The list isn't the same backwards and forwards.";
+
+    cout << endl << endl;
+
+    // STEP 14:
+    cout << "Step 14" << endl;
+    int gta = 0;
+    for (int v : newArray) {
+        if (v > avg) gta++;
+    }
+    cout << "There are " << gta << " numbers greater than the average of " << avg << "." << endl;
+
+    cout << endl;
+
+    // STEP 15:
+    cout << "Step 15" << endl;
+    int evens = 0;
+    for (int v : newArray) {
+        if (v % 2 == 0) evens++;
+    }
+    cout << "There are " << evens << " even numbers in the list." << endl;
+
+    cout << endl;
+
+    // STEP 16: 
+    cout << "Step 16" << endl;
+    int anoArray[20];
+    for (int lcv = 19; lcv > -1; lcv--) {
+        anoArray[19-lcv] = newArray[lcv];
+    }
+    cout << "Old Array: ";
+    for (int v : newArray) {
+        cout << v << " ";
+    }
+    cout << endl << "New Array: ";
+    for (int v : anoArray) {
+        cout << v << " ";
+    }
+
+    cout << endl << endl;
+
+    // STEP 17:
     
+     
 }
