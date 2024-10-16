@@ -20,7 +20,7 @@ int main() {
         cout << bigArray[lcv] << " ";
     }
 
-    cout << endl;
+    cout << endl << endl;
 
     // STEP 2: Print the array from beginning to end using a for-each loop
     cout << "Step 2" << endl;
@@ -28,20 +28,20 @@ int main() {
         cout << v << " ";
     }
 
-    cout << endl;
+    cout << endl << endl;
 
     // STEP 3: What number is in the middle of the array?
     cout << "Step 3" << endl;
     cout << "Middle: " << bigArray[9];
 
-    cout << endl;
+    cout << endl << endl;
 
     // STEP 4: What is the average of the first, middle, and last numbers of the array?
     cout << "Step 4" << endl;
     int avg = (bigArray[0] + bigArray[9] + bigArray[18]) / 3.0;
     cout << "Average: " << avg;
 
-    cout << endl;
+    cout << endl << endl;
 
     // STEP 5: Find the smallest and largest numbers in the Array
     cout << "Step 5" << endl;
@@ -57,12 +57,14 @@ int main() {
     cout << endl;
 
     // STEP 6: Switch the largest with the smallest number. Print the list.
+    cout << "Step 6" << endl;
     int largLoc = 0;
     int smalLoc = 0;
     largLoc =  indexOf(bigArray, largest);
     smalLoc = indexOf(bigArray, smallest);
     bigArray[largLoc] = smallest;
     bigArray[smalLoc] = largest;
+    // Something about this doesnt work... large number gets deleted
     cout << "Reprinted list: " << endl;
     for (int v : bigArray) {
         cout << v << " ";
@@ -71,7 +73,17 @@ int main() {
     cout << endl;
 
     // STEP 7: Create a new random from 1 to 10 and insert it in the middle slot. Print the numbers.
-    uniform_int_distribution<int> dist(1,10);
-    
+    uniform_int_distribution<int> newdist(1,10);
+
+    cout << endl;
+
+    // STEP 8: 
+    cout << "Step 8" << endl;
+    for (int lcv = 0; lcv < arrlen(bigArray); lcv++) {
+        bigArray[lcv] = bigArray[lcv] + 10;
+    }
+    for (int v : bigArray) {
+        cout << v << " ";
+    }
     
 }
