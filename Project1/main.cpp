@@ -10,7 +10,7 @@ int main() {
     while (true) {
         cout << "Commands: new [n], change priority [p], view [v] : ";
         cin >> command;
-        if (command == "n") {
+        if (command == "n" || command == "new") {
             struct Assignment newAssignment;
             cout << "Enter assignment name: ";
             cin >> newAssignment.name;
@@ -30,9 +30,13 @@ int main() {
             }
             assignments.push_back(newAssignment);
             cout << endl << "New Assignment created." << endl;
-        } else if (command == "v") {
-            for (Assignment assignment : assignments) {
-                cout << format(assignment);
+        } else if (command == "v" || command == "view") {
+            string method;
+            cout << "Enter sort method (creation date [c], due date [d], name [n], priority [p]): ";
+            cin >> method;
+            if (method == "c") {}
+            for (Assignment a : assignments) {
+                cout << format(a);
             }
         }
     }
