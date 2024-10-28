@@ -12,5 +12,7 @@ int main() {
     string name;
     int score;
     ifstream f("prog505b.dat");
-    
+    if (f.is_open()) {
+        
+    }
 }

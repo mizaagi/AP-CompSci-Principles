@@ -8,9 +8,10 @@ typedef struct Assignment {
     string     priority;
     string creationdate;
     string      duedate;
+    int              id;
 };
 
 string format(Assignment a) {
-    string fAssignment = a.name + " - due " + a.duedate + " Priority " + a.priority;
+    string fAssignment = a.name + " - due " + a.duedate + " - " + a.priority + " priority "  + "\n";
     return fAssignment;
 }
