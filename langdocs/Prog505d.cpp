@@ -30,13 +30,13 @@ int main() {
     int sats = 0;
     int suats = 0;
 
-    int monAvg;
-    int tueAvg;
-    int wedAvg;
-    int thuAvg;
-    int friAvg;
-    int satAvg;
-    int sunAvg;
+    double monAvg;
+    double tueAvg;
+    double wedAvg;
+    double thuAvg;
+    double friAvg;
+    double satAvg;
+    double sunAvg;
 
     ifstream f("prog505d.txt");
     if (f.is_open()) {
@@ -59,13 +59,13 @@ int main() {
             satHits += n6;
             sunHits += n7;
 
-            mats += a1;
-            tats += a2;
-            wats += a3;
-            thats += a4;
-            fats += a5;
-            sats += a6;
-            suats += a7;
+            mats += n1;
+            tats += n2;
+            wats += n3;
+            thats += n4;
+            fats += n5;
+            sats += n6;
+            suats += n7;
 
             monAvg = n1 / a1;
             tueAvg = n2 / a2;
@@ -75,6 +75,13 @@ int main() {
             satAvg = n6 / a6;
             sunAvg = n7 / a7;
         } f.close();
+        cout << "Monday " << mats << " " << monAvg << endl;
+        cout << "Tuesday " << tats << " " << tueAvg << endl;
+        cout << "Wednesday " << wats << " " << wedAvg << endl;
+        cout << "Thursday " << thats << " " << thuAvg << endl;
+        cout << "Friday " << fats << " " << friAvg << endl;
+        cout << "Saturday " << sats << " " << satAvg << endl;
+        cout << "Sunday " << suats << " " << sunAvg << endl;
         
     }
 }

@@ -302,7 +302,10 @@ ___
 
 # 11. String Methods
 
-???
+```cpp
+#include <string>
+
+```
 
 
 
@@ -344,7 +347,9 @@ ___
 
 # 14. Functions/Methods
 ```cpp
-
+int getValue(int inA, int inB) {
+  return Math.pow(inA, inB);
+}
 ```
 
 
@@ -375,6 +380,7 @@ type arrayName [ arraySize ];
 int balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
 // Assigning different values to elements of arrays
 // works the same as it does in Python:
+balance[2] = 5.0;
 
 ```
 
@@ -385,7 +391,14 @@ int balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
 
 ## 15.2 Matrices
 
-???
+```cpp
+int arr[4][2] = {
+  {1234, 56},
+  {1212, 33},
+  {1434, 80},
+  {1312, 78}
+};
+```
 
 
 
@@ -495,15 +508,17 @@ ___ -->
 
 
 
-<!-- # 20. Importing Local Libraries
+# 20. Importing Local Libraries
 
-???
+```cpp
+#include "locallibrary.hpp"
+```
 
 
 
 
 
-___ -->
+___
 
 
 

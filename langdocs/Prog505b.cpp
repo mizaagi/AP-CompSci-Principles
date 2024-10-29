@@ -3,16 +3,13 @@
 #include <string>
 using namespace std;
 
-int getAvg(int n1, int n2, int n3, int n4) {
-    int sum = n1+n2+n3+n4;
-    return sum/4.0;
-}
-
 int main() {
-    string name;
-    int score;
+    string first, last;
+    int s1, s2, s3, s4, s5, aS, bS, cS, dS, fS;
     ifstream f("prog505b.dat");
     if (f.is_open()) {
-        
+        while (f >> first >> last >> s1 >> s2 >> s3 >> s4 >> s5) {
+            
+        }
     }
 }

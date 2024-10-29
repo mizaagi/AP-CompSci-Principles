@@ -13,13 +13,13 @@ int main() {
         if (command == "n" || command == "new") {
             struct Assignment newAssignment;
             cout << "Enter assignment name: ";
-            cin >> newAssignment.name;
+            cin  >> newAssignment.name;
             cout << "Enter creation date in format MM/DD/YYYY: ";
-            cin >> newAssignment.creationdate;
+            cin  >> newAssignment.creationdate;
             cout << "Enter due date in format MM/DD/YYYY: ";
-            cin >> newAssignment.duedate;
+            cin  >> newAssignment.duedate;
             cout << "Enter priority: ";
-            cin >> newAssignment.priority;
+            cin  >> newAssignment.priority;
             cout << "Enter tag (x for exit): ";
             while (nTag != "x") {
                 cin >> nTag;
@@ -34,9 +34,10 @@ int main() {
             string method;
             cout << "Enter sort method (creation date [c], due date [d], name [n], priority [p]): ";
             cin >> method;
-            if (method == "c") {}
-            for (Assignment a : assignments) {
-                cout << format(a);
+            if (method == "c") {
+                for (Assignment a : sort(assignments, "cd")) {
+                    cout << format(a);
+                }
             }
         }
     }
