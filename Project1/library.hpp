@@ -8,14 +8,6 @@ typedef struct date {
     int day;
 };
 
-date getInfo(Assignment a) {
-    struct date newDate;
-    newDate.year = stoi(a.duedate.substr(6, 4));
-    newDate.month = stoi(a.duedate.substr(3, 1)) * 10 + stoi(a.duedate.substr(4,1));
-    newDate.day = stoi(a.duedate.substr(0,1)) * 10 + stoi(a.duedate.substr(1,1));
-    return newDate;
-}
-
 typedef struct Assignment {
     vector<string> tags;
     string         name;
@@ -25,6 +17,16 @@ typedef struct Assignment {
     int              id;
     int            sort;
 };
+
+date getInfo(Assignment a) {
+    struct date newDate;
+    newDate.year = stoi(a.duedate.substr(6, 4));
+    newDate.month = stoi(a.duedate.substr(3, 1)) * 10 + stoi(a.duedate.substr(4,1));
+    newDate.day = stoi(a.duedate.substr(0,1)) * 10 + stoi(a.duedate.substr(1,1));
+    return newDate;
+}
+
+
 
 vector<Assignment> sort(vector<Assignment> sortVect, string sortType) {
     vector<Assignment> newVect;
@@ -39,9 +41,9 @@ vector<Assignment> sort(vector<Assignment> sortVect, string sortType) {
         int month2 = date2.month;
         int day2 = date2.day;
 
-        if (year < year2 || (month < month2 && year < year2) || (!year2 < year && !month2 < year2 || day <= day2)) {
+        if (year < year2 || (year == year2 && month < month2) || (year == year2 && month == month2 && day <= day2)) {
             newVect.insert(newVect.begin() + lcv-1, sortVect[lcv]);
-        }
+        } else newVect.push_back(sortVect[lcv]);
     }
     return newVect;
 }
