@@ -31,13 +31,8 @@ int main() {
             assignments.push_back(newAssignment);
             cout << endl << "New Assignment created." << endl;
         } else if (command == "v" || command == "view") {
-            string method;
-            cout << "Enter sort method (creation date [c], due date [d], name [n], priority [p]): ";
-            cin >> method;
-            if (method == "c") {
-                for (Assignment a : sort(assignments, "cd")) {
-                    cout << format(a);
-                }
+            for (Assignment a : sort(assignments, "cd")) {
+                cout << format(a);
             }
         }
     }
