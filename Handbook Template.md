@@ -305,6 +305,9 @@ ___
 ```cpp
 #include <string>
 
+string main = "HelloWorld"
+string part = main.substr(5); // "World"
+part = main.substr(2,3); // "llo"
 ```
 
 
