@@ -2,7 +2,7 @@
 
 **AP Computer Science Principles 2023-2024**
 
-FirstName LastName
+Marlon Kohn
 
 <!-- This is a comment (which will not be displayed in the live file);
 replace all "???" with your own text. -->
@@ -270,10 +270,17 @@ ___
 
 
 # 9. Logic Operators
+`&&` - and
+
+`||` - or
+
+`^` - xor
+
+`!` - not
 
 ```cpp
 #include <iostream>
-
+if (!condition1 || condition2 && condition3 ^ condition4)
 ```
 
 
@@ -322,7 +329,10 @@ ___
 
 # 12. Random Generation
 
-???
+```cpp
+int random = rand();
+// This produces a random number between 0 and RAND_MAX.
+```
 
 
 
@@ -336,7 +346,24 @@ ___
 
 # 13. Looping Structures
 
-???
+```cpp
+while (true) {
+  doThing();
+}
+
+int arr[] = {10, 20, 30, 40, 50};
+for (num : arr) {
+  cout << num;
+}
+
+
+// A do-while loop always executes what is in the do loop once before checking whether to do it again by looking at the while condition.
+do {
+  cout << "This is a do-while loop.";
+}
+while (true);
+
+```
 
 
 
@@ -350,7 +377,7 @@ ___
 
 # 14. Functions/Methods
 ```cpp
-int getValue(int inA, int inB) {
+int exp(int inA, int inB) {
   return Math.pow(inA, inB);
 }
 ```
@@ -449,15 +476,25 @@ ___ -->
 
 
 
-<!-- # 18. Working with Files
+# 16. Working with Files
 
-???
+```cpp
+#include <fstream>
+#include <iostream>
+
+ifstream f("file.dat");
+if f.is_open() {
+  while (f >> name) {
+    cout << name << endl;
+  }
+}
+```
 
 
 
 
 
-___ -->
+___
 
 
 
@@ -511,7 +548,7 @@ ___ -->
 
 
 
-# 20. Importing Local Libraries
+# 17. Importing Local Libraries
 
 ```cpp
 #include "locallibrary.hpp"
