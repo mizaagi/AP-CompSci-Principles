@@ -294,8 +294,18 @@ ___
 
 
 # 10. Advanced Decision Structures
-
-???
+```cpp
+switch(expression) {
+  case x:
+    cout << "Hello";
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
 
 
 
@@ -315,6 +325,8 @@ ___
 string main = "HelloWorld"
 string part = main.substr(5); // "World"
 part = main.substr(2,3); // "llo"
+
+length = main.length();
 ```
 
 
