@@ -7,24 +7,23 @@
 using namespace std;
 
 int main() {
-    vector<string> letters; 
     string type;
     string input;
     map<string, string> m;
     m = initMap(m);
     while (true) {
-        cout << "Morse code or plain text input? \n";
+        cout << "Morse code or plain text input? (m/t) \n";
         cin >> type;
-        if (type == "t") {
+        if (type == "t" || type == "text") {
             cout << "Enter text: ";
             std::cin.ignore();
             getline(cin, input);
-            cout << toMorse(input, m);
+            cout << "Morse code: " << toMorse(input, m) << endl;
         } else {
             cout << "Enter morse code, divided by |'s: ";
             std::cin.ignore();
             getline(cin, input);
-            cout << toText(input, m);
+            cout << "Text: " << toText(input, m) << endl;
         }
     }
 }

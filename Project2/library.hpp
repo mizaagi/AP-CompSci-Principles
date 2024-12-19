@@ -53,7 +53,7 @@ string toMorse(string input, map<string, string> m) {
     for (int i = 0; i < input.length(); i++) {
         string current = m[string(1, input[i])];
         morseStr += current;
-        if (i != input.length() - 1) // Avoid trailing '|'
+        if (i != input.length() - 1)
             morseStr += "|";
     }
     return morseStr;
@@ -69,7 +69,7 @@ string toText(string input, map<string, string> m) {
     // --------------------------------------------
     int ss1 = 0;
     int ss2 = 0;
-    for (int i = 0; i < input.length()-1; i++) {
+    for (int i = 0; ss2 < input.length()-1; i++) {
         while (input[ss2] != '|' && ss2 < input.length())
             ss2++;
         morseWord = input.substr(ss1, ss2-ss1);
@@ -81,14 +81,4 @@ string toText(string input, map<string, string> m) {
         ss2++;
     }
     return text;
-
-    
-
-
-    /* search for key from value: just gonna have to do this
-    for (char k : m.keys) {
-        if (m[k] == morseWord)
-            return k;    
-    }
-    */
 }
