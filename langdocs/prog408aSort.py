@@ -46,7 +46,7 @@ def main():
         format(data3, "Selection Sort", data3_time)
         format(data4, "Insertion Sort", data4_time)
 
-
+        
     except Exception as e:
         print("Error: ", e)
         raise e
