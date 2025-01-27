@@ -34,8 +34,26 @@ class TestCalc(unittest.TestCase):
         with self.assertRaises(ZeroDivisionError):
             Calc.div(0, 0)
 
-    def test_div_error_case(self):
+    def test_sub_error_case(self):
         self.assertEqual(Calc.div(1, -1), -1)
+
+    def test_sub_normal_case(self):
+        self.assertEqual(Calc.sub(1, 2), -1)
+
+    def test_sub_edge_case(self):
+        self.assertEqual(Calc.sub(0, 0), 0)
+
+    def test_sub_error_case(self):
+        self.assertEqual(Calc.sub(1, -1), 2)
+
+    def test_mul_normal_case(self):
+        self.assertEqual(Calc.mul(1, 2), 2)
+
+    def test_mul_edge_case(self):
+        self.assertEqual(Calc.mul(0, 0), 0)
+
+    def test_mul_error_case(self):
+        self.assertEqual(Calc.mul(1, -1), -1)
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestCalc)
