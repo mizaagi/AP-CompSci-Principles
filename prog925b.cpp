@@ -25,5 +25,15 @@ int main() {
     cout << x << endl;
     x ^= 0b01000000;
     cout << x << endl;
+    x &= 0b00011100;
+    int y = x >> 2;
+    cout << y << endl;
+
+    int m = 5;
+    int n = 9;
+    int packed = (n << 8) | m;
+    cout << packed << endl;
+
+
 
 }
