@@ -6,15 +6,11 @@ public class Course {
     private int tPoints;
     private String name;
 
-    public Course(String n, ArrayList<Assignment> a) {
+    public Course(String n) {
         name = n;
-        assignments = a;
+        assignments = new ArrayList<Assignment>();
         tPoints = 0;
-        for (Assignment e : assignments) {
-            tPoints += e.getWeight();
-            grade += e.getScore() * 0.1 * e.getWeight();
-        }
-        grade /= tPoints;
+        grade = 0.0;
     }
 
     public double getGrade()      { return grade;   }

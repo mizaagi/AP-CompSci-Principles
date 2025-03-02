@@ -18,4 +18,6 @@ public class Student {
         preGpa /= numClasses;
         gpa = preGpa;
     }
+
+    public double getGpa() { return gpa; }
 }
