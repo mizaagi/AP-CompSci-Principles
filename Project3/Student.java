@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import Course;
+import Assignment;
 
 public class Student {
     private ArrayList<Course> courses;
@@ -9,8 +11,8 @@ public class Student {
         name = n;
         courses = c;
 
-        preGpa = 0.0;
-        numClasses = 0;
+        double preGpa = 0.0;
+        double numClasses = 0.0;
         for (Course d : courses) {
             numClasses++;
             preGpa += d.getGrade();
@@ -20,4 +22,28 @@ public class Student {
     }
 
     public double getGpa() { return gpa; }
+    public void addCourse(Course c) {
+        courses.add(c);
+    }
+    public void calc() {
+        double preGpa = 0.0;
+        double numClasses = 0.0;
+        for (Course d : courses) {
+            numClasses++;
+            preGpa += d.getGrade();
+        }
+        preGpa /= numClasses;
+        gpa = preGpa;
+    }
+    public String getName() { return name; }
+    public String toString() {
+        calc();
+        String out = "Name: " + name + " | GPA: " + gpa + "\nCourses: ";
+        if (courses.size() != 0) {
+            for (Course c : courses) {
+                out += c;
+            }
+        } else out += "NONE";
+        return out;
+    }
 }

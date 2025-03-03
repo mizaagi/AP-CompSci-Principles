@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import Assignment;
 
 public class Course {
     private ArrayList<Assignment> assignments;
@@ -35,6 +36,16 @@ public class Course {
         Assignment e = new Assignment(n,s,w);
         assignments.add(e);
         calcGrade();
+    }
+
+    public String toString() {
+        String out = "Assignments:\n";
+        if (assignments.size() != 0)
+            for (Assignment a : assignments)
+                out += "\t- " + a + "\n";
+        else
+            out += "\tNONE";
+        return out;
     }
     
 
