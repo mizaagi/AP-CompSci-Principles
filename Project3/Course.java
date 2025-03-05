@@ -26,7 +26,7 @@ public class Course {
     public void deleteAssignment(String name) {
         for (int i = 0; i < assignments.size(); i++) {
             if (assignments.get(i).getName().equals(name)) {
-                assignments.delete(i);
+                assignments.remove(i);
             }
         }
     }
@@ -46,7 +46,7 @@ public class Course {
     }
 
     public String toString() {
-        String out = "Assignments:\n";
+        String out = name + "\nAssignments:\n";
         if (assignments.size() != 0)
             for (Assignment a : assignments)
                 out += "\t- " + a + "\n";
