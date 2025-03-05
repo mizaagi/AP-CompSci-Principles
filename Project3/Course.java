@@ -23,6 +23,13 @@ public class Course {
         }
         return new Assignment("NOT AN ASSIGNMENT", 0, 0);
     }
+    public void deleteAssignment(String name) {
+        for (int i = 0; i < assignments.size(); i++) {
+            if (assignments.get(i).getName().equals(name)) {
+                assignments.delete(i);
+            }
+        }
+    }
     public void calcGrade() {
         grade = 0.0;
         tPoints = 0;
@@ -46,6 +53,9 @@ public class Course {
         else
             out += "\tNONE";
         return out;
+    }
+    public void setName(String na) {
+        name = na;
     }
     
 

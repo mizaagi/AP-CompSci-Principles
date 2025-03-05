@@ -46,4 +46,5 @@ public class Student {
         } else out += "NONE";
         return out;
     }
+    public ArrayList<Course> getCourses() { return courses; }
 }
