@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import Course;
-import Assignment;
 
 public class Student {
     private ArrayList<Course> courses;
@@ -18,6 +16,8 @@ public class Student {
             preGpa += d.getGrade();
         }
         preGpa /= numClasses;
+        preGpa *= 0.1;
+        preGpa *= 4.0;
         gpa = preGpa;
     }
 
@@ -33,6 +33,8 @@ public class Student {
             preGpa += d.getGrade();
         }
         preGpa /= numClasses;
+        preGpa *= 0.1;
+        preGpa *= 4.0;
         gpa = preGpa;
     }
     public String getName() { return name; }

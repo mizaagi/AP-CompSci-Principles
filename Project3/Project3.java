@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import Assignment;
-import Course;
-import Student;
 
 public class Project3 {
     public static void main(String[] args) {
@@ -12,7 +9,7 @@ public class Project3 {
         boolean exit = false;
         boolean exitAdd = false;
         while (!exit) {
-            System.out.print("---------OPTIONS---------\n1.............ADD STUDENT\n2............EDIT STUDENT\n3...........QUERY STUDENT\n4....................QUIT\n");
+            System.out.print("---------OPTIONS---------\n1.............ADD STUDENT\n2............EDIT STUDENT\n3...........VIEW STUDENTS\n4....................QUIT\n");
             int choice = input.nextInt();
             if (choice == 1) {
                 System.out.print("Enter student name: ");
@@ -25,18 +22,17 @@ public class Project3 {
                         String cName = input.next();
                         Course c = new Course(cName);
                         System.out.print("Enter an assignment name, percentage score, and amount of points (x to continue): ");
-                        boolean exitAssignmentAdd = false;
-                        while (!exitAssignmentAdd) {
+                        while (true) {
                             String aName = input.next();
-                            if (aName.equals("x")) {
-                                exitAssignmentAdd = true;
+                            if (aName.equals("x")) 
                                 break;
-                                   }
                             double aPerc = input.nextDouble();
                             int aWeight  = input.nextInt();
                             c.addAssignment(aName, aPerc, aWeight);
                         }
-                    } exitAdd = true;
+                    } else {
+                        exitAdd = true;
+                    }
                 }
             } else if (choice == 2) {
                 System.out.print("Enter student first name: ");
@@ -46,7 +42,7 @@ public class Project3 {
                         System.out.println(s);
                         System.out.print("Enter course name: ");
                         String courseSearchName = input.next();
-                        for (Course c : student.getCourses()) {
+                        for (Course c : s.getCourses()) {
                             if (c.getCourseName().equals(courseSearchName)) {
                                 System.out.print("What would you like to do? (n for name change, a to add an assignment, d to delete an assignment)");
                                 String yetAnotherChoice = input.next();
@@ -55,8 +51,8 @@ public class Project3 {
                                     c.setName(input.next());
                                 } else if (yetAnotherChoice.equals("a")) {
                                     System.out.print("Enter assignment details ('name percentage points' format): ");
-                                    c.addAssigment(input.next(), input.next(), input.next());
-                                } else if (yetAnotherChoice.equals(d)) {
+                                    c.addAssigment(input.next(), input.nextDouble(), input.nextInt());
+                                } else if (yetAnotherChoice.equals("d")) {
                                     System.out.print("Enter assignment name: ");
                                     String delete = input.next();
                                     c.deleteAssignment(delete);
